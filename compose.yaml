@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:${POSTGRES_VERSION}
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changme}
+      PGDATA: /tmp
+    volumes:
+      - ./datas/postgres/:/var/lib.postgresql/data
+      - ./dump/:/dump:cached
+      - ./config/.pgpass:/.pgpass
+    expose:
+      - 5432
+    networks:
+      - reverseproxy
+
+networks:
+  reverseproxy:
+    name: reverseproxy
+    external: true

@@ -1,0 +1,5 @@
+.env
+/datas/*
+!/datas/.gitkeep
+/dump/*
+!/dump/.gitkeep
