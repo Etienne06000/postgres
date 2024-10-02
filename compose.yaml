@@ -16,7 +16,7 @@ services:
     networks:
       - reverseproxy
 
-#test  4 : change env secret to repo secret
+#test  5: add server port to cmd ci 
 networks:
   reverseproxy:
     name: reverseproxy
