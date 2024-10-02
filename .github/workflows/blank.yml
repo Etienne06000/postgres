@@ -25,4 +25,4 @@ jobs:
         
       - name: Deploy postgres 
         run: |
-          ssh ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} 'cd ${{ secrets.VPS_PATH_POSTGRES }} && git pull origin main'
+          ssh -p ${{VPS_PORT}} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} 'cd ${{ secrets.VPS_PATH_POSTGRES }} && git pull origin main'
