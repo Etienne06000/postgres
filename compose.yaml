@@ -16,7 +16,7 @@ services:
     networks:
       - reverseproxy
 
-#test  5: add server port to cmd ci 
+#test  6: syntaxe 
 networks:
   reverseproxy:
     name: reverseproxy
