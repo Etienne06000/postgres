@@ -38,4 +38,5 @@ jobs:
           cd ${{ secrets.VPS_PATH_POSTGRES }}
           git config --global --add safe.directory $(pwd)  # Ajoute le répertoire courant comme "safe"
           git pull origin main
+          docker compose up -d
           EOF
