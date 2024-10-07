@@ -36,7 +36,7 @@ jobs:
         run: |
           ssh -p ${{ secrets.REMOTE_PORT }} ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
           cd ${{ secrets.VPS_PATH_POSTGRES }}
-          git config --global --add safe.directory $(pwd)  # Ajoute le répertoire courant comme "safe"
+          # git config --global --add safe.directory $(pwd)  # Ajoute le répertoire courant comme "safe"
           git pull
           docker compose up -d
           EOF
